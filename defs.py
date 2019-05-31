@@ -8,10 +8,10 @@ def rand(n):#Рандом
         az = random.choice(sand)
         p+=az
     return p
-def down (juz, path, id1d):#Путь с такими слешами /(Функция скачивания)
-    filename = id1d+'.png'
+def down (url, path, name):#Путь с такими слешами /(Функция скачивания) url-путь до картинки path-путь для скачивания name-Имя файла
+    filename = name+'.png'
     path1 = path + filename
-    juz1 = requests.get(juz)
+    url_get = requests.get(url)
     with open(path1, 'wb')as f:
-        f.write(juz1.content)
+        f.write(url_get.content)
     pass
